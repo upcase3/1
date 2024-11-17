@@ -81,8 +81,5 @@ function displayErrorScreen(Title, Desc) {
     win.document.getElementById("TITLE").innerHTML = Title || "апплицатионс"
     win.document.getElementById("ISSUE_DESC").innerHTML = Desc || "An error occured. There was no reason provided in JavaScript."
 
-
     open(location, '_self').close();
-    sleep(9999)
 }
-displayErrorScreen("ISSUE", "No output") //beginWindow()
