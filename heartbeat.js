@@ -71,7 +71,7 @@ function beginWindow() {
 
     if (popUpWasBlocked(w)) {
         sleep(2500)
-        errorHandler(); // handle the error
+        errorHandler();
     } else {
         open(location, '_self').close();
     }
@@ -83,5 +83,5 @@ function displayErrorScreen(Title, Desc) {
 
     open(location, '_self').close();
 }
-
-displayErrorScreen("IssueMan", "OK")
+    
+beginWindow()
