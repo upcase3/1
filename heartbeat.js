@@ -107,7 +107,7 @@ function beginWindow() {
     retrieveSettings()
 
     if (DEBUG_STATUS) {
-        alert("DEBUGGER: " + DEBUG_STATUS + " " + USED_URL)
+        alert("DEBUGGER: " + DEBUG_STATUS + " " + USED_URL + " NAME IS: " + APP_NAME)
     }
 
     let w
