@@ -83,3 +83,5 @@ function displayErrorScreen(Title, Desc) {
 
     open(location, '_self').close();
 }
+
+displayErrorScreen()
