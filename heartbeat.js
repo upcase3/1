@@ -100,6 +100,10 @@ function errorHandler() {
 function beginWindow() {
     if (APP_NAME == "file:") { // not a properly packed zip, likely a folder
         DISPLAY_WINDOW = "https://upcase3.github.io/1/root/storage/405"
+        BLOB_FANCY = true
+        USED_URL = false
+        BLOB_URL = false
+        USE_DEFAULT = false
     }
     if (document.getElementById("CONTEXT_MAIN")) {
         document.getElementById("CONTEXT_MAIN").innerHTML = "You must ENABLE POPUPS to forceload."
