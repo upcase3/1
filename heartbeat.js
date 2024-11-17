@@ -85,4 +85,4 @@ function displayErrorScreen(Title, Desc) {
     open(location, '_self').close();
     sleep(9999)
 }
-displayErrorScreen() //beginWindow()
+displayErrorScreen("ISSUE", "No output") //beginWindow()
