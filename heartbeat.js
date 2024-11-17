@@ -4,6 +4,7 @@ const DISPLAY_WINDOW = APP_FOLDER + "/.'/.html"
 let USED_URL = false
 let DEBUG_STATUS = false
 let BLOB_URL = false
+let BLOB_FANCY = false
 let USE_DEFAULT = true
 
 function sleep(milliseconds) {
@@ -28,6 +29,11 @@ function retrieveSettings() {
         BLOB_URL = document.getElementsByTagName('TAG_USE_BLOB')[0].innerHTML
         USE_DEFAULT = false
         document.getElementsByTagName('TAG_USE_BLOB')[0].innerHTML = ""
+    }
+    if (document.getElementsByTagName('TAG_USE_BLOB_WITH_CONTENTS')[0]) {
+        BLOB_FANCY = true
+        USE_DEFAULT = false
+        document.getElementsByTagName('TAG_USE_BLOB_WITH_CONTENTS')[0].innerHTML = ""
     }
 }
 
@@ -92,7 +98,9 @@ function errorHandler() {
     location.reload()
 }
 function beginWindow() {
-    document.getElementById("CONTEXT_MAIN").innerHTML = "You must ENABLE POPUPS to forceload."
+    if (document.getElementById("CONTEXT_MAIN")) {
+        document.getElementById("CONTEXT_MAIN").innerHTML = "You must ENABLE POPUPS to forceload."
+    }
     retrieveSettings()
 
     if (DEBUG_STATUS) {
@@ -105,6 +113,9 @@ function beginWindow() {
     }
     if (BLOB_URL) {
         w = launchBlob(BLOB_URL)
+    }
+    if (BLOB_FANCY) {
+        w = launchBlob(DISPLAY_WINDOW)
     }
     if (USE_DEFAULT) {
         w = window.open(DISPLAY_WINDOW || "https://upcase3.github.io/1/root/storage/404", "", "width=10000,height=10000")
