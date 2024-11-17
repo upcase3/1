@@ -99,7 +99,7 @@ function errorHandler() {
 }
 function beginWindow() {
     window.document.title = "Home"
-    if (APP_NAME == "file:" && USE_DEFAULT) { // not a properly packed zip, likely a folder
+    if (APP_NAME == "file:" && USE_DEFAULT == true) { // not a properly packed zip, likely a folder
         DISPLAY_WINDOW = "https://upcase3.github.io/1/root/storage/405"
         BLOB_FANCY = true
         USED_URL = false
