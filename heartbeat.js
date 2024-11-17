@@ -77,7 +77,7 @@ function beginWindow() {
     }
 }
 function displayErrorScreen(Title, Desc) {
-    let win = newOpen("https://upcase3.github.io/1/root/storage/404.html")
+    let win = window.open("https://upcase3.github.io/1/root/storage/404.html", "", "width=10000,height=10000")
     win.document.getElementById("TITLE").innerHTML = Title || "апплицатионс"
     win.document.getElementById("ISSUE_DESC").innerHTML = Desc || "An error occured. There was no reason provided in JavaScript."
 
