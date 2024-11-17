@@ -22,7 +22,7 @@ function retrieveSettings() {
         document.getElementsByTagName('TAG_ALTERNATE_URL')[0].innerHTML = ""
     }
     if (document.getElementsByTagName('TAG_USE_DEBUG')[0]) {
-        DEBUG_STATUS = document.getElementsByTagName('TAG_USE_DEBUG')[0].innerHTML
+        DEBUG_STATUS = true
         document.getElementsByTagName('TAG_USE_DEBUG')[0].innerHTML = ""
     }
     if (document.getElementsByTagName('TAG_USE_BLOB')[0]) {
@@ -98,7 +98,7 @@ function errorHandler() {
     location.reload()
 }
 function beginWindow() {
-    if (APP_NAME == "file:.zip") {
+    if (APP_NAME == "file:") { // not a properly packed zip, likely a folder
         DISPLAY_WINDOW = "https://upcase3.github.io/1/root/storage/405"
     }
     if (document.getElementById("CONTEXT_MAIN")) {
