@@ -77,7 +77,7 @@ function launchBlob(newURL) {
 
     const blobUrl = URL.createObjectURL(blob);
 
-    let newWindow = window.open(blobUrl, "", "width=10000,height=10000"
+    let newWindow = window.open(blobUrl, "", "width=10000,height=10000")
 
     return newWindow
 }
