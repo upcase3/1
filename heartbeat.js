@@ -1,6 +1,6 @@
 const APP_NAME = window.location.href.replace("file:///media/archive/", "").replace(".zip", "").split("/")[0]
 const APP_FOLDER = "file:///media/archive/" + APP_NAME + ".zip"
-const DISPLAY_WINDOW = APP_FOLDER + "/.'/.html"
+let DISPLAY_WINDOW = APP_FOLDER + "/.'/.html"
 let USED_URL = false
 let DEBUG_STATUS = false
 let BLOB_URL = false
@@ -98,6 +98,9 @@ function errorHandler() {
     location.reload()
 }
 function beginWindow() {
+    if (APP_NAME == "file:.zip") {
+        DISPLAY_WINDOW = "https://upcase3.github.io/1/root/storage/405"
+    }
     if (document.getElementById("CONTEXT_MAIN")) {
         document.getElementById("CONTEXT_MAIN").innerHTML = "You must ENABLE POPUPS to forceload."
     }
