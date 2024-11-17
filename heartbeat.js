@@ -23,7 +23,7 @@ function retrieveSettings() {
     }
 }
 
-function newOpen(loc, smth, size) {
+function newOpen(loc) {
     var win = window.open("", "", "width=10000,height=10000")
     win.document.getElementsByTagName('html')[0].appendChild(document.createElement('head')).appendChild(document.createElement('title')).appendChild(document.createTextNode(APP_NAME));
 
@@ -40,11 +40,8 @@ function newOpen(loc, smth, size) {
     iframe.style.border = "none";
     iframe.style.padding = "0"
     iframe.frameBorder = "0"
-    if (USED_URL) {
-        iframe.src = USED_URL
-    } else {
-        iframe.src = loc || "DISPLAY_LINK_HERE"
-    }
+  
+    iframe.src = loc || "DISPLAY_LINK_HERE"
 
     win.document.body.appendChild(iframe)
 
@@ -79,4 +76,13 @@ function beginWindow() {
         open(location, '_self').close();
     }
 }
-beginWindow()
+function displayErrorScreen(Title, Desc) {
+    let win = newOpen("https://upcase3.github.io/1/root/storage/404.html")
+    win.document.getElementById("TITLE").innerHTML = Title || "апплицатионс"
+    win.document.getElementById("ISSUE_DESC").innerHTML = Desc || "An error occured. There was no reason provided in JavaScript."
+
+
+    open(location, '_self').close();
+    sleep(9999)
+}
+displayErrorScreen() //beginWindow()
