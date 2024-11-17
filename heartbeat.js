@@ -3,7 +3,7 @@ const APP_FOLDER = "file:///media/archive/" + APP_NAME + ".zip"
 const DISPLAY_WINDOW = APP_FOLDER + "/.'/.html"
 let USED_URL = false
 let DEBUG_STATUS = false
-5
+
 function sleep(milliseconds) {
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
